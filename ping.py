@@ -32,23 +32,26 @@ def notify_me(action, msg=None):
 	API = os.environ.get('TWILIO_API')
 	KEY = os.environ.get('TWILIO_KEY')
 	
-	client = twilio_client(ACC, KEY)
+	client = twilio_client(API, KEY)
 
 	if action.lower() == 'call':
 		action = client.calls.create(
 						url='http://demo.twilio.com/docs/voice.xml',
 						from_='+15592065130',
-						to='+917428432678'
+						to='+917428432678',
 					 )
 	elif action.lower() == 'msg':
-		action = client.messages \
-	    .create(
-	         body=f'''Price Updates..!
+		
+		for number in ['+917428432678', '+918383017980']: # parthik ,aman
+
+			action = client.messages \
+		    .create(
+		         body=f'''Price Updates from Parthik Papa..!
 -------------------------------------
 {msg}''',
-	         from_='+15592065130',
-	         to='+917428432678'
-	     )
+		         from_='+15592065130',
+		         to=number,
+		     )
 
 	action.sid
 
@@ -77,7 +80,7 @@ Last Updated        : {cur_time()}'''
 	
 	print(info, '\n')
 
-	if btc<6100 or xrp>13 or xrp<10 or stock<35 or stock>100:
+	if btc>6100 or xrp>13 or xrp<10 or stock<35 or stock>100:
 		print('Pinging you, time to make some money! Hell yeah!')
 		notify_me(action='msg', msg=info)
 		print(f'Notified! ({cur_time()})', '\n')
