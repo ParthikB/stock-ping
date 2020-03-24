@@ -83,6 +83,6 @@ Last Updated        : {cur_time()}'''
 		print(f'Notified! ({cur_time()})', '\n')
 		for t in range(600)[::-1]: # 10 minutes break
 			time.sleep(1)
-			print(f'Re-initializing server in {convert_to_time(t)}m ..', end='\r')
+			print(f'Re-initializing server in {convert_to_time(t)} m ...')
 
 	time.sleep(20)
