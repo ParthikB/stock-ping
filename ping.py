@@ -3,13 +3,13 @@ from binance.client import Client as binance_client
 import yfinance as yf
 
 from datetime import datetime
-import time
+import time, os
 
 def get_crypto_price():
-	api_key    = 'jfdgMTk4LEnYl54Lto18zWAvyYS2GEOfvfwfnifaQawFE9TIMUlZnjCPqubWKWoP'
-	secret_key = 'H0UfJS8hCj13a3StI3IgZ46C0AfkaUS6zwf7s0bK8bDv1cqP8x49kHe4M4phVfnI'
-
-	client = binance_client(api_key, secret_key)
+	API = os.environ.get('BINANCE_API')
+	KEY = os.environ.get('BINANCE_SECRET_KEY')
+	
+	client = binance_client(API, KEY)
 
 	# Getting the average price of the COIN in $
 	btc_price  = client.get_avg_price(symbol=f'BTCUSDT')
@@ -28,10 +28,10 @@ def get_stock_price():
 
 
 def notify_me(action, msg=None):
-	ACC = 'AC243598673f6cf8a6fe4ad5ae15d0271d'
-	KEY = 'ef642d4b863ff00b0378c06625364eb2'
-
-
+	
+	API = os.environ.get('TWILIO_API')
+	KEY = os.environ.get('TWILIO_KEY')
+	
 	client = twilio_client(ACC, KEY)
 
 	if action.lower() == 'call':
