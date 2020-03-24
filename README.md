@@ -1,1 +1,1 @@
-# stock-ping
+# Stock Ping Notifier
