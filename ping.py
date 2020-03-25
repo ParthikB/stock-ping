@@ -42,7 +42,7 @@ def notify_me(action, msg=None):
 					 )
 	elif action.lower() == 'msg':
 		
-		for number in ['+917428432678', '+918383017980']: # parthik ,aman
+		for number in ['+917428432678', '+918383017980', '+917004439297']: # parthik ,aman, sourabh
 
 			action = client.messages \
 		    .create(
