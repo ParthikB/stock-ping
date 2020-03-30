@@ -75,7 +75,7 @@ while True:
 	btc, xrp = get_crypto_price()
 	stock = get_stock_price()
 	info = f'''Current BTC Price   : {btc} $
-Current XRP Price   : {'{0:.10f}'.format(xrp)} BTC
+Current XRP Price   : {'{0:.8f}'.format(xrp)} BTC
 Current Stock Price : Rs. {stock}
 -------------------------------------
 Last Updated        : {cur_time()}'''
