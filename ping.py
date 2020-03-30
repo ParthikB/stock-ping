@@ -16,7 +16,9 @@ def get_crypto_price():
 	btc_price  = round(float(btc_price['price']), 2)
 
 	xrp_price  = client.get_avg_price(symbol='XRPUSDT')
-	xrp_price  = round(float(xrp_price['price'])*74, 2)
+# 	xrp_price  = round(float(xrp_price['price'])*74, 2)
+	xrp_price  = float(xrp_price['price'])
+
 
 	return btc_price, xrp_price
 
@@ -42,7 +44,7 @@ def notify_me(action, msg=None):
 					 )
 	elif action.lower() == 'msg':
 		
-		for number in ['+917428432678', '+917004439297']: # parthik , sourabh
+		for number in ['+917428432678']: # parthik
 
 			action = client.messages \
 		    .create(
@@ -80,11 +82,11 @@ Last Updated        : {cur_time()}'''
 	
 	print(info, '\n')
 
-	if btc<6100 or xrp>14 or xrp<10 or stock<25 or stock>45:
+	if btc<5800 or xrp>13 or xrp<12 or stock<25 or stock>30:
 		print('Pinging you, time to make some money! Hell yeah!')
 		notify_me(action='msg', msg=info)
 		print(f'Notified! ({cur_time()})', '\n')
-		for t in range(1800)[::-1]: # 10 minutes break
+		for t in range(1800)[::-1]: # 30 minutes break
 			time.sleep(1)
 			print(f'Re-initializing server in {convert_to_time(t)} m ...')
 
