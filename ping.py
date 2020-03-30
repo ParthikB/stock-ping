@@ -17,7 +17,7 @@ def get_crypto_price():
 
 	xrp_price  = client.get_avg_price(symbol='XRPBTC')
 # 	xrp_price  = round(float(xrp_price['price'])*74, 2)
-	xrp_price  = float(xrp_price['price'])
+	xrp_price  = round(float(xrp_price['price']), 8)
 
 
 	return btc_price, xrp_price
@@ -75,7 +75,7 @@ while True:
 	btc, xrp = get_crypto_price()
 	stock = get_stock_price()
 	info = f'''Current BTC Price   : {btc} $
-Current XRP Price   : {xrp} BTC
+Current XRP Price   : {'{0:.10f}'.format(xrp)} BTC
 Current Stock Price : Rs. {stock}
 -------------------------------------
 Last Updated        : {cur_time()}'''
