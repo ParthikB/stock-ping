@@ -17,7 +17,7 @@ def get_crypto_price():
 
 	xrp_price  = client.get_avg_price(symbol='XRPBTC')
 # 	xrp_price  = round(float(xrp_price['price'])*74, 2)
-	xrp_price  = round(float(xrp_price['price']), 8)
+	xrp_price  = float(xrp_price['price'])
 
 
 	return btc_price, xrp_price
