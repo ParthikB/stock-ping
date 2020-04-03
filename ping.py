@@ -86,7 +86,7 @@ Last Updated        : {cur_time()}'''
 		print('Pinging you, time to make some money! Hell yeah!')
 		notify_me(action='msg', msg=info)
 		print(f'Notified! ({cur_time()})', '\n')
-		for t in range(1800)[::-1]: # 30 minutes break
+		for t in range(3600)[::-1]: # 60 minutes break
 			time.sleep(1)
 			print(f'Re-initializing server in {convert_to_time(t)} m ...')
 
