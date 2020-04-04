@@ -71,7 +71,7 @@ def convert_to_time(t):
 
 while True:
 
-	print('Fetching Details..')
+	print('Fetching Details..', os.getcwd())
 	btc, xrp = get_crypto_price()
 	stock = get_stock_price()
 	info = f'''Current BTC Price   : {btc} $
