@@ -82,11 +82,11 @@ Last Updated        : {cur_time()}'''
 	
 	print(info, '\n')
 
-	if btc<5800 or xrp>13 or xrp<12 or stock<21 or stock>23:
+	if btc<5800 or xrp>13 or xrp<11 or stock<19 or stock>27:
 		print('Pinging you, time to make some money! Hell yeah!')
 		notify_me(action='msg', msg=info)
 		print(f'Notified! ({cur_time()})', '\n')
-		for t in range(3600)[::-1]: # 60 minutes break
+		for t in range(7200)[::-1]: # 120 minutes break
 			time.sleep(1)
 			print(f'Re-initializing server in {convert_to_time(t)} m ...')
 
