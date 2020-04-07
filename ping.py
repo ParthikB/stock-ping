@@ -82,7 +82,7 @@ Last Updated        : {cur_time()}'''
 	
 	print(info, '\n')
 
-	if btc<5800 or xrp>0.000027 or xrp<0.000026 or stock<19 or stock>27:
+	if btc<6500 or xrp>0.0000275 or xrp<0.0000265 or stock<22 or stock>26:
 		print('Pinging you, time to make some money! Hell yeah!')
 		notify_me(action='msg', msg=info)
 		print(f'Notified! ({cur_time()})', '\n')
